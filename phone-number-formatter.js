@@ -1,5 +1,4 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-
 /**
  * `phone-number-formatter`
  * formats the input to a valid E164 phone number
@@ -13,11 +12,13 @@ export class PhoneNumberFormatter extends PolymerElement {
     return html`
       <style>
         :host {
-          display: block;
+          display: block;                    
+        }
+        input {
+          padding:5px;
         }
       </style>
-      <input type="text" value="[[number]]" placeholder="">
-    `;
+      <input type="text" value="[[number]]" placeholder="[[placeHolder]]" />`;
   }
   static get properties() {
     return {
@@ -29,6 +30,15 @@ export class PhoneNumberFormatter extends PolymerElement {
         type: String,
         value: '',
       },
+      placeHolder:{
+        type: String,
+        value: 'phone number'
+      },
+      countryCode: 
+      {
+        type:String,
+        value: 'AU'        
+      }
     };
   }
 }
