@@ -1,4 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import 'google-libphonenumber';
 /**
  * `phone-number-formatter`
  * formats the input to a valid E164 phone number
@@ -8,6 +9,11 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
  * @demo demo/index.html
  */
 export class PhoneNumberFormatter extends PolymerElement {
+  constructor(){
+    super();
+    //https://www.polymer-project.org/3.0/docs/devguide/data-system#change-events
+    this.addEventListener('keyup', this.log.bind(this));
+  }
   static get template() {
     return html`
       <style>
@@ -21,6 +27,7 @@ export class PhoneNumberFormatter extends PolymerElement {
       <input type="text" value="[[number]]" placeholder="[[placeHolder]]" />`;
   }
   static get properties() {
+    
     return {
       label:{
         type: String,
@@ -29,6 +36,8 @@ export class PhoneNumberFormatter extends PolymerElement {
       number: {
         type: String,
         value: '',
+        notify: true,
+        reflectToAttribute: true
       },
       placeHolder:{
         type: String,
@@ -40,6 +49,10 @@ export class PhoneNumberFormatter extends PolymerElement {
         value: 'AU'        
       }
     };
+  }
+
+  log() {
+    console.log(this.countryCode);
   }
 }
 

@@ -3,7 +3,8 @@
   "description": "formats the input to a valid E164 phone number",
   "main": "phone-number-formatter.js",
   "dependencies": {
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/polymer": "^3.0.0",
+    "google-libphonenumber": "^3.1.11"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
