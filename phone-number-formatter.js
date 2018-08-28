@@ -1,5 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import 'google-libphonenumber';
+import 'google-libphonenumber/dist/libphonenumber';
 import '@polymer/iron-input/iron-input.js';
 
 /**
@@ -64,8 +64,18 @@ export class PhoneNumberFormatter extends PolymerElement {
     };
   }
 
-  getE164Number(number) {
-    return number;
+  getE164Number(number) {    
+    if (number!=undefined && number!="")
+    {
+      var instance = libphonenumber.PhoneNumberUtil.getInstance();
+      var phoneNumber = instance.parse(number, "AU")
+      if (typeof (phoneNumber) !== "undefined" && typeof (phoneNumber.phone) !== "undefined")
+      {
+        console.log(instance.isValidNumberForRegion(phoneNumber.phone, "AU"));
+      }   
+
+    }
+    
   }
 
   log() {
