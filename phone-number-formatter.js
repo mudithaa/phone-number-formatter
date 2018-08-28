@@ -1,5 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import 'google-libphonenumber';
+import '@polymer/iron-input/iron-input.js';
+
 /**
  * `phone-number-formatter`
  * formats the input to a valid E164 phone number
@@ -23,8 +25,16 @@ export class PhoneNumberFormatter extends PolymerElement {
         input {
           padding:5px;
         }
-      </style>
-      <input type="text" value="[[number]]" placeholder="[[placeHolder]]" />`;
+        label {
+          margin-right:5px;
+        }
+      </style>     
+      <label>{{label}}</label>
+      <iron-input bind-value="{{number}}" >
+      <input value="{{value::number}}" placeholder="[[placeHolder]]">
+      </iron-input>
+      <br />
+      You typed: {{number}}`;
   }
   static get properties() {
     
@@ -35,9 +45,7 @@ export class PhoneNumberFormatter extends PolymerElement {
       },
       number: {
         type: String,
-        value: '',
-        notify: true,
-        reflectToAttribute: true
+        value: ''
       },
       placeHolder:{
         type: String,
@@ -47,12 +55,21 @@ export class PhoneNumberFormatter extends PolymerElement {
       {
         type:String,
         value: 'AU'        
+      },
+      E164format:
+      {
+        type:String,
+        computed:'getE164Number(number)'
       }
     };
   }
 
+  getE164Number(number) {
+    return number;
+  }
+
   log() {
-    console.log(this.countryCode);
+    console.log(this.number);
   }
 }
 
