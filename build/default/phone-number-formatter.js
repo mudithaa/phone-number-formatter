@@ -1,5 +1,10 @@
 import { html, PolymerElement } from "./node_modules/@polymer/polymer/polymer-element.js";
 import "./node_modules/google-libphonenumber/dist/libphonenumber.js";
+import "./node_modules/@polymer/iron-input/iron-input.js";
+import "./node_modules/@polymer/paper-dropdown-menu/paper-dropdown-menu.js";
+import "./node_modules/@polymer/paper-item/paper-item.js";
+import "./node_modules/@polymer/paper-listbox/paper-listbox.js";
+import "./node_modules/@polymer/polymer/lib/elements/dom-repeat.js";
 /**
  * `phone-number-formatter`
  * formats the input to a valid E164 phone number
@@ -11,9 +16,7 @@ import "./node_modules/google-libphonenumber/dist/libphonenumber.js";
 
 export class PhoneNumberFormatter extends PolymerElement {
   constructor() {
-    super(); //https://www.polymer-project.org/3.0/docs/devguide/data-system#change-events
-
-    this.addEventListener('keyup', this.log.bind(this));
+    super();
   }
 
   static get template() {
@@ -25,8 +28,25 @@ export class PhoneNumberFormatter extends PolymerElement {
         input {
           padding:5px;
         }
-      </style>
-      <input type="text" value="[[number]]" placeholder="[[placeHolder]]" />`;
+        label {
+          margin-right:5px;
+        }
+      </style>     
+      <label>{{label}}</label>
+      <iron-input bind-value="{{number}}" >
+      <paper-dropdown-menu label="Country">
+        <paper-listbox slot="dropdown-content" selected="1">
+          <dom-repeat items="{{flags}}">
+            <template>
+              <paper-item>{{item}}</paper-item>
+            </template>
+          </dom-repeat>
+        </paper-listbox>
+      </paper-dropdown-menu>
+      <input value="{{value::number}}" placeholder="[[placeHolder]]">
+      </iron-input>
+      <br />
+      You typed: {{number}}`;
   }
 
   static get properties() {
@@ -37,9 +57,7 @@ export class PhoneNumberFormatter extends PolymerElement {
       },
       number: {
         type: String,
-        value: '',
-        notify: true,
-        reflectToAttribute: true
+        value: ''
       },
       placeHolder: {
         type: String,
@@ -48,12 +66,40 @@ export class PhoneNumberFormatter extends PolymerElement {
       countryCode: {
         type: String,
         value: 'AU'
+      },
+      E164format: {
+        type: String,
+        computed: 'getE164Number(number)'
+      },
+      flags: {
+        type: Array,
+        computed: 'getFlags()'
       }
     };
   }
 
-  log() {
-    console.log(this.countryCode);
+  getFlags() {
+    const testFolder = './images/';
+
+    const fs = require('fs');
+
+    fs.readdir(images, (err, files) => {
+      files.forEach(file => {
+        console.log(file); // use those file and return it as a REST API
+      });
+    });
+  }
+
+  getE164Number(number) {
+    if (number != undefined && number != "") {
+      var instance = libphonenumber.PhoneNumberUtil.getInstance();
+      var phoneNumber = instance.parse(number, "AU");
+
+      if (typeof phoneNumber !== "undefined" && typeof phoneNumber.phone !== "undefined") {
+        console.log(instance.isValidNumberForRegion(phoneNumber.phone, "AU"));
+        console.log(phoneNumber);
+      }
+    }
   }
 
 }

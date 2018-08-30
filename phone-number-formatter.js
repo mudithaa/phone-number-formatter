@@ -1,6 +1,12 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import 'google-libphonenumber/dist/libphonenumber';
 import '@polymer/iron-input/iron-input.js';
+import '@polymer/paper-dropdown-menu/paper-dropdown-menu.js';
+import '@polymer/paper-item/paper-item.js';
+import '@polymer/paper-listbox/paper-listbox.js';
+import '@polymer/polymer/lib/elements/dom-repeat.js';
+import {NeonAnimationRunnerBehavior} from '@polymer/neon-animation/neon-animation-runner-behavior.js';
+import '@polymer/neon-animation/animations/scale-down-animation.js';
 
 /**
  * `phone-number-formatter`
@@ -12,9 +18,7 @@ import '@polymer/iron-input/iron-input.js';
  */
 export class PhoneNumberFormatter extends PolymerElement {
   constructor(){
-    super();
-    //https://www.polymer-project.org/3.0/docs/devguide/data-system#change-events
-    this.addEventListener('keyup', this.log.bind(this));
+    super();    
   }
   static get template() {
     return html`
@@ -31,6 +35,15 @@ export class PhoneNumberFormatter extends PolymerElement {
       </style>     
       <label>{{label}}</label>
       <iron-input bind-value="{{number}}" >
+      <paper-dropdown-menu label="Country">
+        <paper-listbox slot="dropdown-content" selected="1">
+          <dom-repeat items="{{flags}}" selected="1">
+            <template>
+              <paper-item><img src="/images/{{item}}.png"</paper-item>
+            </template>
+          </dom-repeat>
+        </paper-listbox>
+      </paper-dropdown-menu>
       <input value="{{value::number}}" placeholder="[[placeHolder]]">
       </iron-input>
       <br />
@@ -60,10 +73,18 @@ export class PhoneNumberFormatter extends PolymerElement {
       {
         type:String,
         computed:'getE164Number(number)'
+      },
+      flags:      
+      {
+        type: Array,
+        computed:'getFlags()'        
       }
     };
   }
 
+  getFlags() {
+    return ['AU', 'US', 'IN', 'LK', 'GB', 'JP', 'FR', 'IN', 'NZ'];
+  }
   getE164Number(number) {    
     if (number!=undefined && number!="")
     {
@@ -72,14 +93,11 @@ export class PhoneNumberFormatter extends PolymerElement {
       if (typeof (phoneNumber) !== "undefined" && typeof (phoneNumber.phone) !== "undefined")
       {
         console.log(instance.isValidNumberForRegion(phoneNumber.phone, "AU"));
+        console.log(phoneNumber); 
       }   
-
+      
     }
     
-  }
-
-  log() {
-    console.log(this.number);
   }
 }
 

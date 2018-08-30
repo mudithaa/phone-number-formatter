@@ -4,8 +4,13 @@
   "main": "phone-number-formatter.js",
   "dependencies": {
     "@polymer/iron-input": "^3.0.0-pre.23",
+    "@polymer/neon-animation": "^3.0.0-pre.25",
+    "@polymer/paper-dropdown-menu": "^3.0.0-pre.25",
+    "@polymer/paper-item": "^3.0.0-pre.25",
+    "@polymer/paper-listbox": "^3.0.0-pre.25",
     "@polymer/polymer": "^3.0.0",
-    "google-libphonenumber": "^3.1.11"
+    "google-libphonenumber": "^3.1.11",
+    "web-animations-js": "^2.3.1"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
