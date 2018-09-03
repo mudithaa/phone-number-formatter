@@ -29,7 +29,8 @@ export class PhoneNumberFormatter extends PolymerElement {
           margin-right:5px;
         }
         vaadin-dropdown-menu{
-          width: 80px;          
+          width: 80px;   
+          height:50px;       
           background-color:#ffffff;
         }
         vaadin-item{
@@ -41,13 +42,18 @@ export class PhoneNumberFormatter extends PolymerElement {
           height: 20px;
           border: solid 1px #000000;
         }
+        input textbox{
+          padding: 9px 10px;
+    background: #f4f4f4;
+    border: 1px solid #e8e8e9;
+        }
       </style>     
       <label>{{label}}</label>
            
       <vaadin-dropdown-menu>
       <template>
         <vaadin-list-box>
-        <dom-repeat items="{{flags}}" value="{{countryCode}}">
+        <dom-repeat items="{{flags}}" value="{{countrycode}}">
           <template>
             <vaadin-item value={{item}}><img src="/images/{{item}}.png"</vaadin-item>
           </template>
@@ -57,9 +63,16 @@ export class PhoneNumberFormatter extends PolymerElement {
     </vaadin-dropdown-menu>
     <iron-input bind-value="{{number}}" > 
       <input value="{{value::number}}" placeholder="[[placeHolder]]">
-      </iron-input>
+    </iron-input>
+    <iron-icon icon="check"></iron-icon>
       <br />
-      You typed: {{number}}`;
+      You typed: {{number}}
+      <br />
+      Country Code: {{countrycode}}
+      <br/>
+      Formatted Number: {{result.e164format}}
+      <br />
+      Region Prefix: {{result.regionPrefix}}`;
   }
   static get properties() {
     
@@ -76,20 +89,25 @@ export class PhoneNumberFormatter extends PolymerElement {
         type: String,
         value: 'phone number'
       },
-      countryCode: 
+      countrycode: 
       {
-        type:String,
-        value: 'AU'        
+        type:String,      
       },
       E164format:
       {
         type:String,
-        computed:'getE164Number(number)'
+        computed:'getE164Number(number, countrycode)'
       },
       flags:      
       {
         type: Array,
         computed:'getFlags()'        
+      },
+      result:{
+        isValid:false,
+        e164format:'',
+        regionPrefix:'',
+        nationalFormat: '',
       }
     };
   }
@@ -97,19 +115,23 @@ export class PhoneNumberFormatter extends PolymerElement {
   getFlags() {
     return ['AU','US','IN','LK','GB','JP','FR','NZ'].sort();
   }
-  getE164Number(number) {    
+  getE164Number(number, countrycode) {    
+    console.log(countrycode); 
     if (number!=undefined && number!="")
     {
       var instance = libphonenumber.PhoneNumberUtil.getInstance();
-      var phoneNumber = instance.parse(number, "AU")
-      if (typeof (phoneNumber) !== "undefined" && typeof (phoneNumber.phone) !== "undefined")
+      var phoneNumber = instance.parse(number, countrycode)
+      if (typeof (phoneNumber) !== "undefined")
       {
-        console.log(instance.isValidNumberForRegion(phoneNumber.phone, "AU"));
-        console.log(phoneNumber); 
-      }   
-      
+        console.log(phoneNumber);
+        var isValid = instance.isPossibleNumber(phoneNumber);
+        var regionPrefix = instance.getCountryCodeForRegion(countrycode);
+        var e164format = instance.formatOutOfCountryCallingNumber(phoneNumber);
+        this.result = {e164format: e164format, regionPrefix : regionPrefix, nationalFormat: phoneNumber.getNationalNumber()};
+        console.log(e164format); 
+        console.log(phoneNumber.getNationalNumber())
+      }
     }
-    
   }
 }
 

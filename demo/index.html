@@ -14,7 +14,9 @@
     </script>
 
     <script type="module" src="../phone-number-formatter.js"></script>
-
+<script lang="text/js">
+var mobile = "040";
+</script>
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
       </style>
@@ -25,13 +27,11 @@
       <h3>Basic phone-number-formatter demo</h3>
       <demo-snippet>
         <template>
-          <phone-number-formatter countryCode="LK"></phone-number-formatter>
+          <!-- <phone-number-formatter number=0718351985 countrycode="AU"></phone-number-formatter> -->
         </template>
       </demo-snippet>
-
-      <p>
-       
-        <phone-number-formatter ></phone-number-formatter>
+      <p>       
+        <phone-number-formatter number=0718351985 countrycode="LK"></phone-number-formatter>
       </p>
     </div>
   </body>
