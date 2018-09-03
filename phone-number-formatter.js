@@ -1,6 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import 'google-libphonenumber/dist/libphonenumber';
 import '@polymer/iron-input/iron-input.js';
+import '@polymer/iron-icon/iron-icon.js';
 import '@polymer/polymer/lib/elements/dom-repeat.js';
 import '@vaadin/vaadin-dropdown-menu/vaadin-dropdown-menu.js';
 
@@ -50,10 +51,10 @@ export class PhoneNumberFormatter extends PolymerElement {
       </style>     
       <label>{{label}}</label>
            
-      <vaadin-dropdown-menu>
+      <vaadin-dropdown-menu value="{{countrycode}}">
       <template>
-        <vaadin-list-box>
-        <dom-repeat items="{{flags}}" value="{{countrycode}}">
+        <vaadin-list-box  >
+        <dom-repeat items="{{flags}}">
           <template>
             <vaadin-item value={{item}}><img src="/images/{{item}}.png"</vaadin-item>
           </template>
@@ -64,7 +65,7 @@ export class PhoneNumberFormatter extends PolymerElement {
     <iron-input bind-value="{{number}}" > 
       <input value="{{value::number}}" placeholder="[[placeHolder]]">
     </iron-input>
-    <iron-icon icon="check"></iron-icon>
+    <iron-icon icon="icons:check"></iron-icon>
       <br />
       You typed: {{number}}
       <br />
