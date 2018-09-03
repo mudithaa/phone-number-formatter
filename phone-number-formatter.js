@@ -1,12 +1,8 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import 'google-libphonenumber/dist/libphonenumber';
 import '@polymer/iron-input/iron-input.js';
-import '@polymer/paper-dropdown-menu/paper-dropdown-menu.js';
-import '@polymer/paper-item/paper-item.js';
-import '@polymer/paper-listbox/paper-listbox.js';
 import '@polymer/polymer/lib/elements/dom-repeat.js';
-import {NeonAnimationRunnerBehavior} from '@polymer/neon-animation/neon-animation-runner-behavior.js';
-import '@polymer/neon-animation/animations/scale-down-animation.js';
+import '@vaadin/vaadin-dropdown-menu/vaadin-dropdown-menu.js';
 
 /**
  * `phone-number-formatter`
@@ -32,18 +28,34 @@ export class PhoneNumberFormatter extends PolymerElement {
         label {
           margin-right:5px;
         }
+        vaadin-dropdown-menu{
+          width: 80px;          
+          background-color:#ffffff;
+        }
+        vaadin-item{
+          width: 80px;
+          text-align: center;
+        }
+        vaadin-item img{
+          width: 40px;
+          height: 20px;
+          border: solid 1px #000000;
+        }
       </style>     
       <label>{{label}}</label>
-      <iron-input bind-value="{{number}}" >
-      <paper-dropdown-menu label="Country">
-        <paper-listbox slot="dropdown-content" selected="1">
-          <dom-repeat items="{{flags}}" selected="1">
-            <template>
-              <paper-item><img src="/images/{{item}}.png"</paper-item>
-            </template>
-          </dom-repeat>
-        </paper-listbox>
-      </paper-dropdown-menu>
+           
+      <vaadin-dropdown-menu>
+      <template>
+        <vaadin-list-box>
+        <dom-repeat items="{{flags}}" value="{{countryCode}}">
+          <template>
+            <vaadin-item value={{item}}><img src="/images/{{item}}.png"</vaadin-item>
+          </template>
+        </dom-repeat>
+        </vaadin-list-box>
+      </template>
+    </vaadin-dropdown-menu>
+    <iron-input bind-value="{{number}}" > 
       <input value="{{value::number}}" placeholder="[[placeHolder]]">
       </iron-input>
       <br />
@@ -83,7 +95,7 @@ export class PhoneNumberFormatter extends PolymerElement {
   }
 
   getFlags() {
-    return ['AU', 'US', 'IN', 'LK', 'GB', 'JP', 'FR', 'IN', 'NZ'];
+    return ['AU','US','IN','LK','GB','JP','FR','NZ'].sort();
   }
   getE164Number(number) {    
     if (number!=undefined && number!="")

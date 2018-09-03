@@ -9,6 +9,8 @@
     "@polymer/paper-item": "^3.0.0-pre.25",
     "@polymer/paper-listbox": "^3.0.0-pre.25",
     "@polymer/polymer": "^3.0.0",
+    "@vaadin/vaadin-dropdown-menu": "^1.1.0",
+    "@vaadin/vaadin-list-box": "^1.1.0",
     "google-libphonenumber": "^3.1.11",
     "web-animations-js": "^2.3.1"
   },

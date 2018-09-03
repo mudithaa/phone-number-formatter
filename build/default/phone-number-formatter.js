@@ -1,10 +1,8 @@
 import { html, PolymerElement } from "./node_modules/@polymer/polymer/polymer-element.js";
 import "./node_modules/google-libphonenumber/dist/libphonenumber.js";
 import "./node_modules/@polymer/iron-input/iron-input.js";
-import "./node_modules/@polymer/paper-dropdown-menu/paper-dropdown-menu.js";
-import "./node_modules/@polymer/paper-item/paper-item.js";
-import "./node_modules/@polymer/paper-listbox/paper-listbox.js";
 import "./node_modules/@polymer/polymer/lib/elements/dom-repeat.js";
+import "./node_modules/@vaadin/vaadin-dropdown-menu/vaadin-dropdown-menu.js";
 /**
  * `phone-number-formatter`
  * formats the input to a valid E164 phone number
@@ -33,16 +31,19 @@ export class PhoneNumberFormatter extends PolymerElement {
         }
       </style>     
       <label>{{label}}</label>
-      <iron-input bind-value="{{number}}" >
-      <paper-dropdown-menu label="Country">
-        <paper-listbox slot="dropdown-content" selected="1">
-          <dom-repeat items="{{flags}}">
-            <template>
-              <paper-item>{{item}}</paper-item>
-            </template>
-          </dom-repeat>
-        </paper-listbox>
-      </paper-dropdown-menu>
+      <iron-input bind-value="{{number}}" >      
+      <vaadin-dropdown-menu>
+      <template>
+        <vaadin-list-box>
+        <dom-repeat items="{{flags}}" selected="1">
+          <template>
+            <paper-item><img src="/images/{{item}}.png"</paper-item>
+          </template>
+        </dom-repeat>
+        </vaadin-list-box>
+      </template>
+    </vaadin-dropdown-menu>
+
       <input value="{{value::number}}" placeholder="[[placeHolder]]">
       </iron-input>
       <br />
@@ -79,15 +80,7 @@ export class PhoneNumberFormatter extends PolymerElement {
   }
 
   getFlags() {
-    const testFolder = './images/';
-
-    const fs = require('fs');
-
-    fs.readdir(images, (err, files) => {
-      files.forEach(file => {
-        console.log(file); // use those file and return it as a REST API
-      });
-    });
+    return ['AU', 'US', 'IN', 'LK', 'GB', 'JP', 'FR', 'IN', 'NZ'];
   }
 
   getE164Number(number) {
