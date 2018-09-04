@@ -130,7 +130,7 @@ export class PhoneNumberFormatter extends PolymerElement {
       if(typeof (phoneNumber) !== "undefined" 
       && instance.isPossibleNumber(phoneNumber) 
       && instance.getRegionCodeForNumber(phoneNumber)!=="undefined" 
-      && instance.getRegionCodeForNumber(phoneNumber)!==""){
+      && instance.getRegionCodeForNumber(phoneNumber)!==null){
         this.countrycode = instance.getRegionCodeForNumber(phoneNumber);
       }
 
