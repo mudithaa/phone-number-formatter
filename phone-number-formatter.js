@@ -73,10 +73,11 @@ export class PhoneNumberFormatter extends PolymerElement {
       <br/>
       Formatted Number: {{result.e164format}}
       <br />
-      Region Prefix: {{result.regionPrefix}}`;
+      Region Prefix: {{result.regionPrefix}}
+      <br />
+      Is Valid: {{result.isValid}}`;
   }
-  static get properties() {
-    
+  static get properties() {    
     return {
       label:{
         type: String,
@@ -97,7 +98,7 @@ export class PhoneNumberFormatter extends PolymerElement {
       E164format:
       {
         type:String,
-        computed:'getE164Number(number, countrycode)'
+        computed:'getE164Number(number)'
       },
       flags:      
       {
@@ -116,21 +117,37 @@ export class PhoneNumberFormatter extends PolymerElement {
   getFlags() {
     return ['AU','US','IN','LK','GB','JP','FR','NZ'].sort();
   }
-  getE164Number(number, countrycode) {    
-    console.log(countrycode); 
-    if (number!=undefined && number!="")
+  getE164Number(number) { 
+    
+    this.result = null;    
+    if (number!=undefined && number!="" && number.length>4)
     {
       var instance = libphonenumber.PhoneNumberUtil.getInstance();
-      var phoneNumber = instance.parse(number, countrycode)
-      if (typeof (phoneNumber) !== "undefined")
-      {
-        console.log(phoneNumber);
-        var isValid = instance.isPossibleNumber(phoneNumber);
-        var regionPrefix = instance.getCountryCodeForRegion(countrycode);
+      
+      var phoneNumber = instance.parse(number, this.countrycode)
+      console.log(instance.getRegionCodeForNumber(phoneNumber));
+
+      if(typeof (phoneNumber) !== "undefined" 
+      && instance.isPossibleNumber(phoneNumber) 
+      && instance.getRegionCodeForNumber(phoneNumber)!=="undefined" 
+      && instance.getRegionCodeForNumber(phoneNumber)!==""){
+        this.countrycode = instance.getRegionCodeForNumber(phoneNumber);
+      }
+
+      if (typeof (phoneNumber) !== "undefined" 
+      && instance.isPossibleNumber(phoneNumber) 
+      && instance.isValidNumberForRegion(phoneNumber, this.countrycode))
+      {        
+        var regionPrefix = instance.getCountryCodeForRegion(this.countrycode);
         var e164format = instance.formatOutOfCountryCallingNumber(phoneNumber);
-        this.result = {e164format: e164format, regionPrefix : regionPrefix, nationalFormat: phoneNumber.getNationalNumber()};
+        this.result = {
+          e164format: e164format, 
+          regionPrefix : regionPrefix, 
+          nationalFormat: phoneNumber.getNationalNumber(), 
+          isValid: true
+        };
         console.log(e164format); 
-        console.log(phoneNumber.getNationalNumber())
+        console.log(phoneNumber);
       }
     }
   }
