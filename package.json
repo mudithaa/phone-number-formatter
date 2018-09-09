@@ -1,6 +1,6 @@
 {
   "name": "@mudithaa/phone-number-formatter",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "formats the input to a valid E164 phone number",
   "main": "phone-number-formatter.js",
   "dependencies": {
