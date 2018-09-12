@@ -1,0 +1,78 @@
+{
+  "_from": "@vaadin/vaadin-overlay@^3.1.1",
+  "_id": "@vaadin/vaadin-overlay@3.1.1",
+  "_inBundle": false,
+  "_integrity": "sha512-SY0JcQ7avXirKssVNwSjIIZbeP40cfFqmoDJ76dz82TXmka+2KHABFsp7lHvU3dDa+7jijHbBNC9aOTsdMPq7Q==",
+  "_location": "/@vaadin/vaadin-overlay",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@vaadin/vaadin-overlay@^3.1.1",
+    "name": "@vaadin/vaadin-overlay",
+    "escapedName": "@vaadin%2fvaadin-overlay",
+    "scope": "@vaadin",
+    "rawSpec": "^3.1.1",
+    "saveSpec": null,
+    "fetchSpec": "^3.1.1"
+  },
+  "_requiredBy": [
+    "/@vaadin/vaadin-dropdown-menu"
+  ],
+  "_resolved": "https://registry.npmjs.org/@vaadin/vaadin-overlay/-/vaadin-overlay-3.1.1.tgz",
+  "_shasum": "c20b9d7300405e9355faca20a102fec75ca5c3c9",
+  "_spec": "@vaadin/vaadin-overlay@^3.1.1",
+  "_where": "C:\\Users\\MUDITH~1.DIS\\AppData\\Local\\Temp\\asset_stageQ6U2vZ\\node_modules\\@vaadin\\vaadin-dropdown-menu",
+  "author": {
+    "name": "Vaadin Ltd"
+  },
+  "bugs": {
+    "url": "https://github.com/vaadin/vaadin-overlay/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/iron-overlay-behavior": "^3.0.0-pre.18",
+    "@polymer/polymer": "^3.0.0",
+    "@vaadin/vaadin-lumo-styles": "^1.1.0-beta1",
+    "@vaadin/vaadin-material-styles": "^1.1.0-beta1",
+    "@vaadin/vaadin-themable-mixin": "^1.2.1"
+  },
+  "deprecated": false,
+  "description": "vaadin-overlay",
+  "devDependencies": {
+    "@polymer/iron-component-page": "^3.0.0-pre.18",
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.18",
+    "@polymer/iron-form": "^3.0.0-pre.18",
+    "@polymer/iron-input": "^3.0.0-pre.18",
+    "@polymer/iron-test-helpers": "^3.0.0-pre.18",
+    "@polymer/paper-button": "^3.0.0-pre.18",
+    "@polymer/paper-input": "^3.0.0-pre.18",
+    "@vaadin/vaadin-button": "^2.1.0-beta2",
+    "@vaadin/vaadin-demo-helpers": "^2.0.1",
+    "@vaadin/vaadin-text-field": "^2.1.0-beta2",
+    "wct-browser-legacy": "^1.0.1"
+  },
+  "homepage": "https://vaadin.com/components",
+  "keywords": [
+    "Vaadin",
+    "vaadin-overlay",
+    "overlay",
+    "web-components",
+    "web-component",
+    "polymer"
+  ],
+  "license": "Apache-2.0",
+  "main": "vaadin-overlay.js",
+  "name": "@vaadin/vaadin-overlay",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaadin/vaadin-overlay.git"
+  },
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0"
+  },
+  "version": "3.1.1"
+}

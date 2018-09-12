@@ -1,0 +1,73 @@
+{
+  "_from": "@polymer/paper-item@^3.0.0-pre.25",
+  "_id": "@polymer/paper-item@3.0.0-pre.25",
+  "_inBundle": false,
+  "_integrity": "sha512-5Lv8gs9oJtcg+me3lxJIIyEFRBMPN91lCT439jrg9NB/iTMDLEGnwpExqkBXEe+MXFco62ZYYyD/NyWSxePR+w==",
+  "_location": "/@polymer/paper-item",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@polymer/paper-item@^3.0.0-pre.25",
+    "name": "@polymer/paper-item",
+    "escapedName": "@polymer%2fpaper-item",
+    "scope": "@polymer",
+    "rawSpec": "^3.0.0-pre.25",
+    "saveSpec": null,
+    "fetchSpec": "^3.0.0-pre.25"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@polymer/paper-item/-/paper-item-3.0.0-pre.25.tgz",
+  "_shasum": "446a266d0bc1e0ede800c324424b294a93c0feeb",
+  "_spec": "@polymer/paper-item@^3.0.0-pre.25",
+  "_where": "C:\\Users\\MUDITH~1.DIS\\AppData\\Local\\Temp\\asset_stageQ6U2vZ",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/PolymerElements/paper-item/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/iron-behaviors": "^3.0.0-pre.24",
+    "@polymer/iron-flex-layout": "^3.0.0-pre.24",
+    "@polymer/paper-styles": "^3.0.0-pre.24",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "A material-design styled list item",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.5.1",
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.24",
+    "@polymer/iron-icon": "^3.0.0-pre.24",
+    "@polymer/iron-icons": "^3.0.0-pre.24",
+    "@polymer/iron-test-helpers": "^3.0.0-pre.24",
+    "@polymer/paper-icon-button": "^3.0.0-pre.24",
+    "@polymer/paper-input": "^3.0.0-pre.24",
+    "@polymer/test-fixture": "^4.0.0-pre.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "webmat": "^0.2.0"
+  },
+  "homepage": "https://github.com/PolymerElements/paper-item",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "item"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "all-imports.js",
+  "name": "@polymer/paper-item",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/paper-item.git"
+  },
+  "scripts": {
+    "format": "webmat",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
+    "prepack": "npm run generate-types"
+  },
+  "version": "3.0.0-pre.25"
+}

@@ -1,0 +1,66 @@
+{
+  "_from": "@polymer/iron-selector@^3.0.0-pre.24",
+  "_id": "@polymer/iron-selector@3.0.0-pre.25",
+  "_inBundle": false,
+  "_integrity": "sha512-EWysNFBT0d+5YzX/tF7KShdqnccDJCnuCnY33egfY/Y7zq2/qXg6jU1M9NTRn48eb/P3ZkzrEMlbodd54rDBXQ==",
+  "_location": "/@polymer/iron-selector",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@polymer/iron-selector@^3.0.0-pre.24",
+    "name": "@polymer/iron-selector",
+    "escapedName": "@polymer%2firon-selector",
+    "scope": "@polymer",
+    "rawSpec": "^3.0.0-pre.24",
+    "saveSpec": null,
+    "fetchSpec": "^3.0.0-pre.24"
+  },
+  "_requiredBy": [
+    "/@polymer/iron-menu-behavior",
+    "/@polymer/neon-animation"
+  ],
+  "_resolved": "https://registry.npmjs.org/@polymer/iron-selector/-/iron-selector-3.0.0-pre.25.tgz",
+  "_shasum": "bbeae5d826d5b8e5986ea541d539985ea7969ff3",
+  "_spec": "@polymer/iron-selector@^3.0.0-pre.24",
+  "_where": "C:\\Users\\MUDITH~1.DIS\\AppData\\Local\\Temp\\asset_stageQ6U2vZ\\node_modules\\@polymer\\neon-animation",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/PolymerElements/iron-selector/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "Manages a set of elements that can be selected",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.5.1",
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.24",
+    "@polymer/iron-test-helpers": "^3.0.0-pre.24",
+    "@polymer/paper-styles": "^3.0.0-pre.24",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "webmat": "^0.2.0"
+  },
+  "homepage": "https://github.com/PolymerElements/iron-selector",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "selector"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "@polymer/iron-selector",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-selector.git"
+  },
+  "scripts": {
+    "format": "webmat",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
+    "prepack": "npm run generate-types"
+  },
+  "version": "3.0.0-pre.25"
+}

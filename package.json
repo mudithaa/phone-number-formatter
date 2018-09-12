@@ -12,12 +12,17 @@
     "@polymer/polymer": "^3.0.0",
     "@vaadin/vaadin-dropdown-menu": "^1.1.0",
     "@vaadin/vaadin-list-box": "^1.1.0",
+    "empathy": "0.0.0",
     "google-libphonenumber": "^3.1.11",
     "web-animations-js": "^2.3.1"
   },
   "devDependencies": {
+    "@0xcda7a/empathy": "0.0.9",
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "wct-browser-legacy": "^1.0.0"
+  },
+  "scripts": {
+    "postinstall": "empathy install"
   }
 }

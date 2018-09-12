@@ -14,9 +14,7 @@
     </script>
 
     <script type="module" src="../phone-number-formatter.js"></script>
-<script lang="text/js">
-  var mobile = "040";
-</script>
+    
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
       </style>
@@ -27,12 +25,9 @@
       <h3>Basic phone-number-formatter demo</h3>
       <demo-snippet>
         <template>
-          <!-- <phone-number-formatter number=0718351985 countrycode="AU"></phone-number-formatter> -->
+          <phone-number-formatter debug="true" number="+441782364400" label="Type your number" countrycode="UK" value="result"></phone-number-formatter>
         </template>
       </demo-snippet>
-      <p>       
-        <phone-number-formatter number="+441782367822" countrycode="LK" value="result"></phone-number-formatter>
-      </p>
     </div>
   </body>
 </html>

@@ -1,0 +1,70 @@
+{
+  "_from": "@polymer/paper-behaviors@^3.0.0-pre.25",
+  "_id": "@polymer/paper-behaviors@3.0.0-pre.26",
+  "_inBundle": false,
+  "_integrity": "sha512-qp7Anu8kE8qoXhvGmWk/Su91b6fgyz2Us2UrrYPZGzldzispt52YjV/5UnGpHffhTfosxvBNPhNWzC2OcpLciQ==",
+  "_location": "/@polymer/paper-behaviors",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@polymer/paper-behaviors@^3.0.0-pre.25",
+    "name": "@polymer/paper-behaviors",
+    "escapedName": "@polymer%2fpaper-behaviors",
+    "scope": "@polymer",
+    "rawSpec": "^3.0.0-pre.25",
+    "saveSpec": null,
+    "fetchSpec": "^3.0.0-pre.25"
+  },
+  "_requiredBy": [
+    "/@polymer/paper-dropdown-menu"
+  ],
+  "_resolved": "https://registry.npmjs.org/@polymer/paper-behaviors/-/paper-behaviors-3.0.0-pre.26.tgz",
+  "_shasum": "5c95f0c6715a89a3a7af78cc8c5983fd33c6b6a1",
+  "_spec": "@polymer/paper-behaviors@^3.0.0-pre.25",
+  "_where": "C:\\Users\\MUDITH~1.DIS\\AppData\\Local\\Temp\\asset_stageQ6U2vZ\\node_modules\\@polymer\\paper-dropdown-menu",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/PolymerElements/paper-behaviors/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/iron-behaviors": "^3.0.0-pre.24",
+    "@polymer/iron-checked-element-behavior": "^3.0.0-pre.24",
+    "@polymer/paper-ripple": "^3.0.0-pre.24",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "Common behaviors across the paper elements",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.5.1",
+    "@polymer/iron-test-helpers": "^3.0.0-pre.24",
+    "@polymer/paper-styles": "^3.0.0-pre.24",
+    "@polymer/test-fixture": "^4.0.0-pre.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "webmat": "^0.2.0"
+  },
+  "homepage": "https://github.com/PolymerElements/paper-behaviors",
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer",
+    "paper",
+    "behavior"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "@polymer/paper-behaviors",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/paper-behaviors.git"
+  },
+  "scripts": {
+    "format": "webmat",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
+    "prepack": "npm run generate-types"
+  },
+  "version": "3.0.0-pre.26"
+}

@@ -1,0 +1,72 @@
+{
+  "_from": "@polymer/iron-validatable-behavior@^3.0.0-pre.24",
+  "_id": "@polymer/iron-validatable-behavior@3.0.0-pre.25",
+  "_inBundle": false,
+  "_integrity": "sha512-xTUUYkQy4D5zoIm9IurtCAMJrew2Atubu87XNwZzySBjrcMHSxU98VtItpCYfWsFlld8Kqk2AQ2EUONo3TLAdw==",
+  "_location": "/@polymer/iron-validatable-behavior",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@polymer/iron-validatable-behavior@^3.0.0-pre.24",
+    "name": "@polymer/iron-validatable-behavior",
+    "escapedName": "@polymer%2firon-validatable-behavior",
+    "scope": "@polymer",
+    "rawSpec": "^3.0.0-pre.24",
+    "saveSpec": null,
+    "fetchSpec": "^3.0.0-pre.24"
+  },
+  "_requiredBy": [
+    "/@polymer/iron-autogrow-textarea",
+    "/@polymer/iron-checked-element-behavior",
+    "/@polymer/iron-input",
+    "/@polymer/paper-dropdown-menu"
+  ],
+  "_resolved": "https://registry.npmjs.org/@polymer/iron-validatable-behavior/-/iron-validatable-behavior-3.0.0-pre.25.tgz",
+  "_shasum": "1215c3bcdc1b057681bde88b510f5c863537462d",
+  "_spec": "@polymer/iron-validatable-behavior@^3.0.0-pre.24",
+  "_where": "C:\\Users\\MUDITH~1.DIS\\AppData\\Local\\Temp\\asset_stageQ6U2vZ\\node_modules\\@polymer\\iron-input",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/PolymerElements/iron-validatable-behavior/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/iron-meta": "^3.0.0-pre.24",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "Provides a behavior for an element that validates user input",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.5.1",
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.24",
+    "@polymer/iron-validator-behavior": "^3.0.0-pre.24",
+    "@polymer/paper-styles": "^3.0.0-pre.24",
+    "@polymer/test-fixture": "^4.0.0-pre.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "webmat": "^0.2.0"
+  },
+  "homepage": "https://github.com/PolymerElements/iron-validatable-behavior",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "iron",
+    "behavior"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "iron-validatable-behavior.js",
+  "name": "@polymer/iron-validatable-behavior",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-validatable-behavior.git"
+  },
+  "scripts": {
+    "format": "webmat",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
+    "prepack": "npm run generate-types"
+  },
+  "version": "3.0.0-pre.25"
+}

@@ -1,0 +1,80 @@
+{
+  "_from": "@polymer/paper-menu-button@^3.0.0-pre.24",
+  "_id": "@polymer/paper-menu-button@3.0.0-pre.25",
+  "_inBundle": false,
+  "_integrity": "sha512-blBF2jam/E99cgtop/bq2Zmj28SgPoStHc16fpZc+Vap+V/I26QFqvUUGWd1TFpKIt5tEqnJCGsVDmNyjXTnUg==",
+  "_location": "/@polymer/paper-menu-button",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@polymer/paper-menu-button@^3.0.0-pre.24",
+    "name": "@polymer/paper-menu-button",
+    "escapedName": "@polymer%2fpaper-menu-button",
+    "scope": "@polymer",
+    "rawSpec": "^3.0.0-pre.24",
+    "saveSpec": null,
+    "fetchSpec": "^3.0.0-pre.24"
+  },
+  "_requiredBy": [
+    "/@polymer/paper-dropdown-menu"
+  ],
+  "_resolved": "https://registry.npmjs.org/@polymer/paper-menu-button/-/paper-menu-button-3.0.0-pre.25.tgz",
+  "_shasum": "96bdcbd2727d32c8a87f9aa5507b58ec89febfda",
+  "_spec": "@polymer/paper-menu-button@^3.0.0-pre.24",
+  "_where": "C:\\Users\\MUDITH~1.DIS\\AppData\\Local\\Temp\\asset_stageQ6U2vZ\\node_modules\\@polymer\\paper-dropdown-menu",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/PolymerElements/paper-menu-button/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/iron-a11y-keys-behavior": "^3.0.0-pre.24",
+    "@polymer/iron-behaviors": "^3.0.0-pre.24",
+    "@polymer/iron-dropdown": "^3.0.0-pre.24",
+    "@polymer/iron-fit-behavior": "^3.0.0-pre.24",
+    "@polymer/neon-animation": "^3.0.0-pre.24",
+    "@polymer/paper-styles": "^3.0.0-pre.24",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "A material design element that composes a trigger and a dropdown menu",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.5.1",
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.24",
+    "@polymer/iron-icon": "^3.0.0-pre.24",
+    "@polymer/iron-icons": "^3.0.0-pre.24",
+    "@polymer/iron-image": "^3.0.0-pre.24",
+    "@polymer/iron-test-helpers": "^3.0.0-pre.24",
+    "@polymer/paper-button": "^3.0.0-pre.24",
+    "@polymer/paper-icon-button": "^3.0.0-pre.24",
+    "@polymer/paper-item": "^3.0.0-pre.24",
+    "@polymer/paper-listbox": "^3.0.0-pre.24",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "webmat": "^0.2.0"
+  },
+  "homepage": "https://github.com/PolymerElements/paper-menu-button",
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer",
+    "menu",
+    "button"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "paper-menu-button.js",
+  "name": "@polymer/paper-menu-button",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/paper-menu-button.git"
+  },
+  "scripts": {
+    "format": "webmat",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
+    "prepack": "npm run generate-types"
+  },
+  "version": "3.0.0-pre.25"
+}

@@ -1,0 +1,65 @@
+{
+  "_from": "@polymer/iron-resizable-behavior@^3.0.0-pre.24",
+  "_id": "@polymer/iron-resizable-behavior@3.0.0-pre.25",
+  "_inBundle": false,
+  "_integrity": "sha512-6C9s5pkjNpTekJFEu/cbEpftC12080ncMekAhIYzbDDa56VVDxWqH2f5M3l2XM55fWkMlfUh3JCiPwlxO4vDCw==",
+  "_location": "/@polymer/iron-resizable-behavior",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@polymer/iron-resizable-behavior@^3.0.0-pre.24",
+    "name": "@polymer/iron-resizable-behavior",
+    "escapedName": "@polymer%2firon-resizable-behavior",
+    "scope": "@polymer",
+    "rawSpec": "^3.0.0-pre.24",
+    "saveSpec": null,
+    "fetchSpec": "^3.0.0-pre.24"
+  },
+  "_requiredBy": [
+    "/@polymer/iron-overlay-behavior",
+    "/@polymer/neon-animation"
+  ],
+  "_resolved": "https://registry.npmjs.org/@polymer/iron-resizable-behavior/-/iron-resizable-behavior-3.0.0-pre.25.tgz",
+  "_shasum": "0d1eb2e102010b22a9353ea49fe8052d74019a6d",
+  "_spec": "@polymer/iron-resizable-behavior@^3.0.0-pre.24",
+  "_where": "C:\\Users\\MUDITH~1.DIS\\AppData\\Local\\Temp\\asset_stageQ6U2vZ\\node_modules\\@polymer\\neon-animation",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/PolymerElements/iron-resizable-behavior/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "Coordinates the flow of resizeable elements",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.5.1",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "webmat": "^0.2.0"
+  },
+  "homepage": "https://github.com/PolymerElements/iron-resizable-behavior#readme",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "iron",
+    "behavior"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "iron-resizable-behavior.js",
+  "name": "@polymer/iron-resizable-behavior",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-resizable-behavior.git"
+  },
+  "scripts": {
+    "format": "webmat",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
+    "prepack": "npm run generate-types"
+  },
+  "version": "3.0.0-pre.25"
+}

@@ -1,0 +1,74 @@
+{
+  "_from": "@polymer/iron-a11y-keys-behavior@^3.0.0-pre.24",
+  "_id": "@polymer/iron-a11y-keys-behavior@3.0.0-pre.25",
+  "_inBundle": false,
+  "_integrity": "sha512-nLEu/Mr0nHI9QosG6k75TyScQVUnuwEn6hFBubFravU0QQ8o2+TTwvK5XAVlW2fcNieEvmgC8EhI6FZJCUsCig==",
+  "_location": "/@polymer/iron-a11y-keys-behavior",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@polymer/iron-a11y-keys-behavior@^3.0.0-pre.24",
+    "name": "@polymer/iron-a11y-keys-behavior",
+    "escapedName": "@polymer%2firon-a11y-keys-behavior",
+    "scope": "@polymer",
+    "rawSpec": "^3.0.0-pre.24",
+    "saveSpec": null,
+    "fetchSpec": "^3.0.0-pre.24"
+  },
+  "_requiredBy": [
+    "/@polymer/iron-behaviors",
+    "/@polymer/iron-menu-behavior",
+    "/@polymer/iron-overlay-behavior",
+    "/@polymer/paper-dropdown-menu",
+    "/@polymer/paper-input",
+    "/@polymer/paper-menu-button",
+    "/@polymer/paper-ripple"
+  ],
+  "_resolved": "https://registry.npmjs.org/@polymer/iron-a11y-keys-behavior/-/iron-a11y-keys-behavior-3.0.0-pre.25.tgz",
+  "_shasum": "912a4bd78ffbfb455e04fb455877d0409f32f928",
+  "_spec": "@polymer/iron-a11y-keys-behavior@^3.0.0-pre.24",
+  "_where": "C:\\Users\\MUDITH~1.DIS\\AppData\\Local\\Temp\\asset_stageQ6U2vZ\\node_modules\\@polymer\\paper-dropdown-menu",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/PolymerElements/iron-a11y-keys-behavior/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "A behavior that enables keybindings for greater a11y.",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.5.1",
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.24",
+    "@polymer/iron-test-helpers": "^3.0.0-pre.24",
+    "@polymer/test-fixture": "^4.0.0-pre.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "webmat": "^0.2.0"
+  },
+  "homepage": "https://github.com/PolymerElements/iron-a11y-keys-behavior#readme",
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer",
+    "a11y",
+    "input"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "iron-a11y-keys-behavior.js",
+  "name": "@polymer/iron-a11y-keys-behavior",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-a11y-keys-behavior.git"
+  },
+  "scripts": {
+    "format": "webmat",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
+    "prepack": "npm run generate-types"
+  },
+  "version": "3.0.0-pre.25"
+}

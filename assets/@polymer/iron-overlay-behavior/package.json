@@ -1,0 +1,71 @@
+{
+  "_from": "@polymer/iron-overlay-behavior@^3.0.0-pre.25",
+  "_id": "@polymer/iron-overlay-behavior@3.0.0-pre.26",
+  "_inBundle": false,
+  "_integrity": "sha512-SJDgsz3gQfkdZAaa9sH4Sd9rSAyKN6s1Ndjkf3N/X6h2gj9sbrVbM+v83TLI2I0bv/bvSR3V0+5+T0w2Z2+Wfg==",
+  "_location": "/@polymer/iron-overlay-behavior",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@polymer/iron-overlay-behavior@^3.0.0-pre.25",
+    "name": "@polymer/iron-overlay-behavior",
+    "escapedName": "@polymer%2firon-overlay-behavior",
+    "scope": "@polymer",
+    "rawSpec": "^3.0.0-pre.25",
+    "saveSpec": null,
+    "fetchSpec": "^3.0.0-pre.25"
+  },
+  "_requiredBy": [
+    "/@polymer/iron-dropdown",
+    "/@vaadin/vaadin-overlay"
+  ],
+  "_resolved": "https://registry.npmjs.org/@polymer/iron-overlay-behavior/-/iron-overlay-behavior-3.0.0-pre.26.tgz",
+  "_shasum": "691c8f6bb87d60a27f78816a0b705adfbe33520b",
+  "_spec": "@polymer/iron-overlay-behavior@^3.0.0-pre.25",
+  "_where": "C:\\Users\\MUDITH~1.DIS\\AppData\\Local\\Temp\\asset_stageQ6U2vZ\\node_modules\\@polymer\\iron-dropdown",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/PolymerElements/iron-overlay-behavior/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/iron-a11y-keys-behavior": "^3.0.0-pre.24",
+    "@polymer/iron-fit-behavior": "^3.0.0-pre.24",
+    "@polymer/iron-resizable-behavior": "^3.0.0-pre.24",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "Provides a behavior for making an element an overlay",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.5.1",
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.24",
+    "@polymer/iron-flex-layout": "^3.0.0-pre.24",
+    "@polymer/iron-test-helpers": "^3.0.0-pre.24",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "webmat": "^0.2.0"
+  },
+  "homepage": "https://github.com/PolymerElements/iron-overlay-behavior#readme",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "behavior",
+    "overlay"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "iron-overlay-behavior.js",
+  "name": "@polymer/iron-overlay-behavior",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-overlay-behavior.git"
+  },
+  "scripts": {
+    "format": "webmat",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
+    "prepack": "npm run generate-types"
+  },
+  "version": "3.0.0-pre.26"
+}

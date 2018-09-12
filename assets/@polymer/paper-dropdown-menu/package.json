@@ -1,0 +1,80 @@
+{
+  "_from": "@polymer/paper-dropdown-menu@^3.0.0-pre.25",
+  "_id": "@polymer/paper-dropdown-menu@3.0.0-pre.25",
+  "_inBundle": false,
+  "_integrity": "sha512-wGoekUde3KC7QmmSQMc7tmM2lDUJ2gGWvBsHN6hKyNpv2G1q6tA49v2zoBahnzaGUxdn+J9ods/KHqmt0HB9eA==",
+  "_location": "/@polymer/paper-dropdown-menu",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@polymer/paper-dropdown-menu@^3.0.0-pre.25",
+    "name": "@polymer/paper-dropdown-menu",
+    "escapedName": "@polymer%2fpaper-dropdown-menu",
+    "scope": "@polymer",
+    "rawSpec": "^3.0.0-pre.25",
+    "saveSpec": null,
+    "fetchSpec": "^3.0.0-pre.25"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@polymer/paper-dropdown-menu/-/paper-dropdown-menu-3.0.0-pre.25.tgz",
+  "_shasum": "fd563b8b97da282079e4d78781c5525dc98367d4",
+  "_spec": "@polymer/paper-dropdown-menu@^3.0.0-pre.25",
+  "_where": "C:\\Users\\MUDITH~1.DIS\\AppData\\Local\\Temp\\asset_stageQ6U2vZ",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/PolymerElements/paper-dropdown-menu/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/iron-a11y-keys-behavior": "^3.0.0-pre.24",
+    "@polymer/iron-form-element-behavior": "^3.0.0-pre.24",
+    "@polymer/iron-icon": "^3.0.0-pre.24",
+    "@polymer/iron-iconset-svg": "^3.0.0-pre.24",
+    "@polymer/iron-validatable-behavior": "^3.0.0-pre.24",
+    "@polymer/paper-behaviors": "^3.0.0-pre.25",
+    "@polymer/paper-input": "^3.0.0-pre.24",
+    "@polymer/paper-menu-button": "^3.0.0-pre.24",
+    "@polymer/paper-ripple": "^3.0.0-pre.24",
+    "@polymer/paper-styles": "^3.0.0-pre.24",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "An element that works similarly to a native browser select",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.5.1",
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.24",
+    "@polymer/iron-test-helpers": "^3.0.0-pre.24",
+    "@polymer/paper-item": "^3.0.0-pre.24",
+    "@polymer/paper-listbox": "^3.0.0-pre.24",
+    "@polymer/paper-tabs": "^3.0.0-pre.24",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "web-animations-js": "^2.3.1",
+    "webmat": "^0.2.0"
+  },
+  "homepage": "https://github.com/PolymerElements/paper-dropdown-menu",
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer",
+    "dropdown",
+    "select"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "@polymer/paper-dropdown-menu",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/paper-dropdown-menu.git"
+  },
+  "scripts": {
+    "format": "webmat",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
+    "prepack": "npm run generate-types"
+  },
+  "version": "3.0.0-pre.25"
+}

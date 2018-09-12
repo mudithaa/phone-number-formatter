@@ -1,0 +1,67 @@
+{
+  "_from": "@polymer/iron-behaviors@^3.0.0-pre.24",
+  "_id": "@polymer/iron-behaviors@3.0.0-pre.25",
+  "_inBundle": false,
+  "_integrity": "sha512-+oo+Ac+NiSi5SwiyqrTPzwXG15nJkHtjhDwI8cOw61AkkH7sjcytTAyrgrXD/ePsd7+TvWGM6yQfcLH5YhQe5A==",
+  "_location": "/@polymer/iron-behaviors",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@polymer/iron-behaviors@^3.0.0-pre.24",
+    "name": "@polymer/iron-behaviors",
+    "escapedName": "@polymer%2firon-behaviors",
+    "scope": "@polymer",
+    "rawSpec": "^3.0.0-pre.24",
+    "saveSpec": null,
+    "fetchSpec": "^3.0.0-pre.24"
+  },
+  "_requiredBy": [
+    "/@polymer/iron-autogrow-textarea",
+    "/@polymer/iron-dropdown",
+    "/@polymer/paper-behaviors",
+    "/@polymer/paper-input",
+    "/@polymer/paper-item",
+    "/@polymer/paper-listbox",
+    "/@polymer/paper-menu-button"
+  ],
+  "_resolved": "https://registry.npmjs.org/@polymer/iron-behaviors/-/iron-behaviors-3.0.0-pre.25.tgz",
+  "_shasum": "e9d65fd06af6a275f9e97c20fcff8d2ecbf83c1a",
+  "_spec": "@polymer/iron-behaviors@^3.0.0-pre.24",
+  "_where": "C:\\Users\\MUDITH~1.DIS\\AppData\\Local\\Temp\\asset_stageQ6U2vZ\\node_modules\\@polymer\\paper-behaviors",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/PolymerElements/iron-behaviors/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/iron-a11y-keys-behavior": "^3.0.0-pre.24",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "deprecated": false,
+  "description": "Provides a set of behaviors for the iron elements",
+  "devDependencies": {
+    "@polymer/gen-typescript-declarations": "^1.5.1",
+    "@polymer/iron-test-helpers": "^3.0.0-pre.24",
+    "@polymer/paper-input": "^3.0.0-pre.24",
+    "@polymer/paper-styles": "^3.0.0-pre.24",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.1",
+    "webmat": "^0.2.0"
+  },
+  "homepage": "https://github.com/PolymerElements/iron-behaviors#readme",
+  "license": "BSD-3-Clause",
+  "name": "@polymer/iron-behaviors",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-behaviors.git"
+  },
+  "scripts": {
+    "format": "webmat",
+    "generate-types": "gen-typescript-declarations --deleteExisting --outDir . --verify",
+    "prepack": "npm run generate-types"
+  },
+  "version": "3.0.0-pre.25"
+}
