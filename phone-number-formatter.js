@@ -133,14 +133,14 @@ numberChanged(){
   {
       var instance = libphonenumber.PhoneNumberUtil.getInstance();
       
-      var phoneNumber = instance.parse(this.number, this.countrycode)
+      var phoneNumber = instance.parse(this.number, this.countryCode)
       console.log(instance.getRegionCodeForNumber(phoneNumber));
 
       if(typeof (phoneNumber) !== "undefined" 
       && instance.isPossibleNumber(phoneNumber) 
       && instance.getRegionCodeForNumber(phoneNumber)!=="undefined" 
       && instance.getRegionCodeForNumber(phoneNumber)!==null){
-        this.countrycode = instance.getRegionCodeForNumber(phoneNumber);
+        this.countryCode = instance.getRegionCodeForNumber(phoneNumber);
       }
 
       if (typeof (phoneNumber) !== "undefined" 
