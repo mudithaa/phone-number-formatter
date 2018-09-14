@@ -1,5 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import 'google-libphonenumber/dist/libphonenumber';
+import 'google-libphonenumber/dist/libphonenumber.js';
 import '@polymer/iron-input/iron-input.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@polymer/polymer/lib/elements/dom-repeat.js';
