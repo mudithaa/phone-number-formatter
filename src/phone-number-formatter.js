@@ -5,6 +5,7 @@ import '@polymer/iron-icon/iron-icon.js';
 import '@polymer/polymer/lib/elements/dom-repeat.js';
 import '@polymer/polymer/lib/elements/dom-if.js';
 import '@vaadin/vaadin-dropdown-menu/vaadin-dropdown-menu.js';
+import '@polymer/polymer/lib/utils/resolve-url.js';
 
 /**
  * `phone-number-formatter`
@@ -59,7 +60,7 @@ export class PhoneNumberFormatter extends PolymerElement {
         <vaadin-list-box  >
         <dom-repeat items="{{flags}}">
           <template>
-            <vaadin-item value={{item}}><img src="../images/{{item}}.png"</vaadin-item>
+            <vaadin-item value={{item}}><img src="/src/images/{{item}}.png"</vaadin-item>
           </template>
         </dom-repeat>
         </vaadin-list-box>
