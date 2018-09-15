@@ -2,13 +2,22 @@
 <html ng-app>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <!-- <script src="node_modules/google-libphonenumber/dist/libphonenumber.js"></script> -->
+    <script src="dist/main.js"></script>
   </head>
   <body>
     <div>
-      <label>Name:</label>
-      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+      <label>Phone Number:</label>
+      <input type="text" ng-model="number" placeholder="Enter a number"  />
       <hr>
-      <h1>Hello {{yourName}}!</h1>
+      <h1>You entered {{number}}!</h1>
+      <phone-number-formatter 
+        debug="true" 
+        number="{{number}}" 
+        label="Type your number" 
+        country-code="GB" 
+        value="result">
+    </phone-number-formatter>
     </div>
   </body>
 </html>

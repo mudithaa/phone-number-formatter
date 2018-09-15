@@ -7,6 +7,8 @@ import '@polymer/polymer/lib/elements/dom-if.js';
 import '@vaadin/vaadin-dropdown-menu/vaadin-dropdown-menu.js';
 import '@polymer/polymer/lib/utils/resolve-url.js';
 
+//import lk from "../src/images/lk.png";
+
 /**
  * `phone-number-formatter`
  * formats the input to a valid E164 phone number
@@ -19,7 +21,7 @@ export class PhoneNumberFormatter extends PolymerElement {
   constructor(){
     super();
     this.addEventListener('number-changed', this.numberChanged);
-    this.addEventListener('country-code-changed', this.countryCodeChanged);    
+    this.addEventListener('country-code-changed', this.countryCodeChanged);
   }
   static get template() {
     return html`
@@ -54,13 +56,14 @@ export class PhoneNumberFormatter extends PolymerElement {
         }
       </style>     
       <label>{{label}}</label>
-           
+      <img src="{{lk}}">
       <vaadin-dropdown-menu value="{{countryCode}}">
       <template>
         <vaadin-list-box  >
         <dom-repeat items="{{flags}}">
           <template>
-            <vaadin-item value={{item}}><img src="/src/images/{{item}}.png"</vaadin-item>
+            <vaadin-item value={{item}}><img src="{{item}}"</vaadin-item>
+            {{item}}
           </template>
         </dom-repeat>
         </vaadin-list-box>
@@ -81,6 +84,8 @@ export class PhoneNumberFormatter extends PolymerElement {
       Region Prefix: {{response.regionPrefix}}
       <br />
       Is Valid: {{response.isValid}}
+      <br />
+      {{images}}
     </template>`;
   }
   static get properties() {    
@@ -107,10 +112,6 @@ export class PhoneNumberFormatter extends PolymerElement {
         type:String, 
         notify:true,     
       },
-      flags: {
-        type: Array,
-        computed:'getFlags()'        
-      },
       response: {
         type: Object,
         readOnly: true,
@@ -119,9 +120,6 @@ export class PhoneNumberFormatter extends PolymerElement {
     };
   }
 
-  getFlags() {
-    return ['AU','US','IN','LK','GB','JP','FR','NZ','CN','SA'].sort();
-  }
 numberChanged(){
   var result = {
     isValid:false,
