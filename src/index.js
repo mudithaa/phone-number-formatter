@@ -1,13 +1,9 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import 'google-libphonenumber/dist/libphonenumber.js';
 import '@polymer/iron-input/iron-input.js';
-import '@polymer/iron-icon/iron-icon.js';
 import '@polymer/polymer/lib/elements/dom-repeat.js';
 import '@polymer/polymer/lib/elements/dom-if.js';
 import '@vaadin/vaadin-dropdown-menu/vaadin-dropdown-menu.js';
-import '@polymer/polymer/lib/utils/resolve-url.js';
-
-//import lk from "../src/images/lk.png";
 
 /**
  * `phone-number-formatter`
@@ -56,14 +52,12 @@ export class PhoneNumberFormatter extends PolymerElement {
         }
       </style>     
       <label>{{label}}</label>
-      <img src="{{lk}}">
       <vaadin-dropdown-menu value="{{countryCode}}">
       <template>
         <vaadin-list-box  >
         <dom-repeat items="{{flags}}">
           <template>
-            <vaadin-item value={{item}}><img src="{{item}}"</vaadin-item>
-            {{item}}
+            <vaadin-item value={{item}}><img src="../src/images/{{item}}.png"</vaadin-item>
           </template>
         </dom-repeat>
         </vaadin-list-box>
@@ -112,12 +106,20 @@ export class PhoneNumberFormatter extends PolymerElement {
         type:String, 
         notify:true,     
       },
+      flags:{
+        type:Array,
+        computed:'getFlags()'        
+      },
       response: {
         type: Object,
         readOnly: true,
         notify: true
       }
     };
+  }
+
+  getFlags() {
+    return ['AU','US','IN','LK','GB','JP','FR','NZ','CN','SA', 'AE', 'LB', 'DE'].sort();
   }
 
 numberChanged(){

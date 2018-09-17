@@ -1,23 +1,32 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="myApp" ng-controller="myCtrl">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
     <!-- <script src="node_modules/google-libphonenumber/dist/libphonenumber.js"></script> -->
     <script src="dist/main.js"></script>
   </head>
   <body>
+      <script>
+          var app = angular.module('myApp', []);
+          app.controller('myCtrl', function($scope) {
+              $scope.number = "01782367822";
+              $scope.result = [];
+          });
+          </script>
     <div>
       <label>Phone Number:</label>
       <input type="text" ng-model="number" placeholder="Enter a number"  />
       <hr>
       <h1>You entered {{number}}!</h1>
       <phone-number-formatter 
-        debug="true" 
+        debug="false" 
         number="{{number}}" 
         label="Type your number" 
         country-code="GB" 
-        value="result">
+        response="{{result}}">
     </phone-number-formatter>
+
+    <h2>Formatted: {{result}}</h2>
     </div>
   </body>
 </html>
