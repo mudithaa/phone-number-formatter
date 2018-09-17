@@ -192,7 +192,7 @@ export class PhoneNumberFormatter extends PolymerElement {
     if (number!=undefined 
       && number!="" 
       && number.length>4
-      && number.match(pattern)){
+      && number.replace(/ /g, "").match(pattern)){
       return true;
     }
     return false;
