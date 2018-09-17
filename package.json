@@ -4,11 +4,7 @@
   "description": "formats the input to a valid E164 phone number",
   "main": "phone-number-formatter.js",
   "dependencies": {
-    "@polymer/iron-input": "^3.0.0-pre.23",
     "@polymer/neon-animation": "^3.0.0-pre.25",
-    "@polymer/paper-dropdown-menu": "^3.0.0-pre.25",
-    "@polymer/paper-item": "^3.0.0-pre.25",
-    "@polymer/paper-listbox": "^3.0.0-pre.25",
     "@polymer/polymer": "^3.0.0",
     "@vaadin/vaadin-dropdown-menu": "^1.1.0",
     "@vaadin/vaadin-list-box": "^1.1.0",

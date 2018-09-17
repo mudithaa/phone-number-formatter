@@ -1,32 +1,36 @@
 <!doctype html>
-<html ng-app="myApp" ng-controller="myCtrl">
+<html >
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-    <!-- <script src="node_modules/google-libphonenumber/dist/libphonenumber.js"></script> -->
-    <script src="dist/main.js"></script>
+    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>    
+    <script src="bower_components/angular-bind-polymer/angular_bind_polymer.js"></script>
+    <script>
+        var app = angular.module('app', [
+          'eee-c.angularBindPolymer']);
+        app.controller('myCtrl', function($scope) {
+            $scope.number = "+441782367822";
+            $scope.result = {};
+            $scope.countryCode = "GB";
+        });
+        </script>   
   </head>
-  <body>
-      <script>
-          var app = angular.module('myApp', []);
-          app.controller('myCtrl', function($scope) {
-              $scope.number = "01782367822";
-              $scope.result = [];
-          });
-          </script>
-    <div>
+  <body>      
+    <div  ng-app="app" ng-controller="myCtrl">
       <label>Phone Number:</label>
-      <input type="text" ng-model="number" placeholder="Enter a number"  />
+      <input id="phone" type="text" ng-model="number" placeholder="Enter a number"  />
       <hr>
       <h1>You entered {{number}}!</h1>
+      <script src="dist/main.js"></script>
       <phone-number-formatter 
-        debug="false" 
+        debug-info="false" 
         number="{{number}}" 
         label="Type your number" 
-        country-code="GB" 
-        response="{{result}}">
-    </phone-number-formatter>
-
-    <h2>Formatted: {{result}}</h2>
+        country-code="{{countryCode}}" 
+        response="{{result}}"
+        bind-polymer>
+      </phone-number-formatter>
+      <h2>Formatted: {{result}}</h2>
+      <h2>Country: {{countryCode}}</h2>
     </div>
   </body>
 </html>
