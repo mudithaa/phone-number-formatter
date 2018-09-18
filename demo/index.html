@@ -17,6 +17,27 @@
     
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
+        phone-number-formatter {
+          --phone-number-formatter-input-theme:{
+            padding: 9px 10px;
+            background: #f4f4f4;
+            border: 1px solid #e8e8e9;
+            font-size: 14px;
+            line-height: normal!important;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius:3px;
+            width:120px;        
+          };
+          --phone-number-formatter-select-theme:{
+            background: #f4f4f4;
+            border: 1px solid #e8e8e9;
+            border-radius:3px;
+            width:80px;
+            margin:0;
+            padding:0;
+            height:10px;
+          };
+        }
       </style>
     </custom-style>
   </head>
@@ -25,8 +46,7 @@
       <h3>Basic phone-number-formatter demo</h3>
       <demo-snippet>
         <template>
-          <phone-number-formatter 
-          debug-info="false" 
+          <phone-number-formatter              
             number="+441782364400" 
             label="Type your number" 
             country-code="GB" 

@@ -25,29 +25,27 @@ export class PhoneNumberFormatter extends PolymerElement {
           display: block;                    
         }
         input {
-          padding:5px;
+          @apply --phone-number-formatter-input-theme         
         }
         label {
           margin-right:5px;
+          @apply --phone-number-formatter-label-theme
         }
         vaadin-dropdown-menu{
-          width: 80px;   
-          height:50px;       
-          background-color:#ffffff;
-        }
-        vaadin-item{
           width: 80px;
-          text-align: center;
+          z-index: 10000;          
+        }
+        div.vaadin-text-field-container{
+          max-height:36px;          
+          @apply --phone-number-formatter-select-theme
+        }
+        vaadin-item{          
+          @apply --phone-number-formatter-option-theme
         }
         vaadin-item img{
           width: 40px;
-          height: 20px;
           border: solid 1px #000000;
-        }
-        input textbox{
-          padding: 9px 10px;
-          background: #f4f4f4;
-          border: 1px solid #e8e8e9;
+          @apply --phone-number-formatter-option-image-theme
         }
       </style>     
       <label>{{label}}</label>
@@ -105,6 +103,12 @@ export class PhoneNumberFormatter extends PolymerElement {
         type:String, 
         notify:true,   
         reflectToAttribute:true  
+      },
+      validationMessage:{
+        type:String,
+        notify:true,
+        reflectToAttribute:true,
+        value:'Phone number is not valid'
       },
       flags:{
         type:Array,
@@ -226,7 +230,7 @@ export class PhoneNumberFormatter extends PolymerElement {
       && number.length>4
       ){
       return true;
-    }
+      }
     return false;
   }
 }
