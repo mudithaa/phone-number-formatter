@@ -222,29 +222,27 @@ class l extends o.a{static get is(){return"dom-if"}static get template(){return 
           display: block;                    
         }
         input {
-          padding:5px;
+          @apply --phone-number-formatter-input-theme         
         }
         label {
           margin-right:5px;
+          @apply --phone-number-formatter-label-theme
         }
         vaadin-dropdown-menu{
-          width: 80px;   
-          height:50px;       
-          background-color:#ffffff;
-        }
-        vaadin-item{
           width: 80px;
-          text-align: center;
+          z-index: 10000;          
+        }
+        div.vaadin-text-field-container{
+          max-height:36px;          
+          @apply --phone-number-formatter-select-theme
+        }
+        vaadin-item{          
+          @apply --phone-number-formatter-option-theme
         }
         vaadin-item img{
           width: 40px;
-          height: 20px;
           border: solid 1px #000000;
-        }
-        input textbox{
-          padding: 9px 10px;
-          background: #f4f4f4;
-          border: 1px solid #e8e8e9;
+          @apply --phone-number-formatter-option-image-theme
         }
       </style>     
       <label>{{label}}</label>
@@ -275,7 +273,7 @@ class l extends o.a{static get is(){return"dom-if"}static get template(){return 
       <br />
       Is Valid: {{response.isValid}}
       
-    </template>`}static get properties(){return{label:{type:String,value:"Phone Number"},number:{type:String,value:"",notify:!0,reflectToAttribute:!0},debugInfo:{type:Boolean,value:!1},placeHolder:{type:String,value:"phone number"},countryCode:{type:String,notify:!0,reflectToAttribute:!0},flags:{type:Array,computed:"getFlags()"},response:{type:Object,readOnly:!0,notify:!0,reflectToAttribute:!0}}}getFlags(){return["AU","US","IN","LK","GB","JP","FR","NZ","CN","SA","AE","LB","DE"].sort()}clearResponse(){this._setResponse({isValid:!1,e164format:"",regionPrefix:"",nationalFormat:""})}setResponse(e,t){var n=e.getCountryCodeForRegion(this.countryCode),o=e.formatOutOfCountryCallingNumber(t),r=e.formatNationalNumberWithCarrierCode(t),i={e164format:o,regionPrefix:n,nationalFormat:r,isValid:!0};this.number=r,this._setResponse(i)}numberChanged(){var t={isValid:!1,e164format:"",regionPrefix:"",nationalFormat:""};if(void 0!=this.number&&""!=this.number&&this.number.length>4){var n=e.PhoneNumberUtil.getInstance(),o=n.parse(this.number,this.countryCode);if(void 0!==o&&n.isPossibleNumber(o)&&"undefined"!==n.getRegionCodeForNumber(o)&&null!==n.getRegionCodeForNumber(o)&&(this.countryCode=n.getRegionCodeForNumber(o)),void 0!==o&&n.isPossibleNumber(o)&&n.isValidNumberForRegion(o,this.countryCode)){var r=n.getCountryCodeForRegion(this.countryCode);t={e164format:n.formatOutOfCountryCallingNumber(o),regionPrefix:r,nationalFormat:n.formatNationalNumberWithCarrierCode(o),isValid:!0}}}this._setResponse(t)}countryCodeChanged(){var t={isValid:!1,e164format:"",regionPrefix:"",nationalFormat:""};if(void 0!=this.number&&""!=this.number&&this.number.length>4){var n=e.PhoneNumberUtil.getInstance(),o=n.parse(this.number,this.countryCode);if(void 0!==o&&n.isPossibleNumber(o)&&n.isValidNumberForRegion(o,this.countryCode)){var r=n.getCountryCodeForRegion(this.countryCode);t={e164format:n.formatOutOfCountryCallingNumber(o),regionPrefix:r,nationalFormat:n.formatNationalNumberWithCarrierCode(o),isValid:!0}}}this._setResponse(t)}isValidNumber(e){return void 0!=e&&""!=e&&e.length>4}}window.customElements.define("phone-number-formatter",r)}.call(this,n(19))},function(e,t){
+    </template>`}static get properties(){return{label:{type:String,value:"Phone Number"},number:{type:String,value:"",notify:!0,reflectToAttribute:!0},debugInfo:{type:Boolean,value:!1},placeHolder:{type:String,value:"phone number"},countryCode:{type:String,notify:!0,reflectToAttribute:!0},validationMessage:{type:String,notify:!0,reflectToAttribute:!0,value:"Phone number is not valid"},flags:{type:Array,computed:"getFlags()"},response:{type:Object,readOnly:!0,notify:!0,reflectToAttribute:!0}}}getFlags(){return["AU","US","IN","LK","GB","JP","FR","NZ","CN","SA","AE","LB","DE"].sort()}clearResponse(){this._setResponse({isValid:!1,e164format:"",regionPrefix:"",nationalFormat:""})}setResponse(e,t){var n=e.getCountryCodeForRegion(this.countryCode),o=e.formatOutOfCountryCallingNumber(t),r=e.formatNationalNumberWithCarrierCode(t),i={e164format:o,regionPrefix:n,nationalFormat:r,isValid:!0};this.number=r,this._setResponse(i)}numberChanged(){var t={isValid:!1,e164format:"",regionPrefix:"",nationalFormat:""};if(void 0!=this.number&&""!=this.number&&this.number.length>4){var n=e.PhoneNumberUtil.getInstance(),o=n.parse(this.number,this.countryCode);if(void 0!==o&&n.isPossibleNumber(o)&&"undefined"!==n.getRegionCodeForNumber(o)&&null!==n.getRegionCodeForNumber(o)&&(this.countryCode=n.getRegionCodeForNumber(o)),void 0!==o&&n.isPossibleNumber(o)&&n.isValidNumberForRegion(o,this.countryCode)){var r=n.getCountryCodeForRegion(this.countryCode);t={e164format:n.formatOutOfCountryCallingNumber(o),regionPrefix:r,nationalFormat:n.formatNationalNumberWithCarrierCode(o),isValid:!0}}}this._setResponse(t)}countryCodeChanged(){var t={isValid:!1,e164format:"",regionPrefix:"",nationalFormat:""};if(void 0!=this.number&&""!=this.number&&this.number.length>4){var n=e.PhoneNumberUtil.getInstance(),o=n.parse(this.number,this.countryCode);if(void 0!==o&&n.isPossibleNumber(o)&&n.isValidNumberForRegion(o,this.countryCode)){var r=n.getCountryCodeForRegion(this.countryCode);t={e164format:n.formatOutOfCountryCallingNumber(o),regionPrefix:r,nationalFormat:n.formatNationalNumberWithCarrierCode(o),isValid:!0}}}this._setResponse(t)}isValidNumber(e){return void 0!=e&&""!=e&&e.length>4}}window.customElements.define("phone-number-formatter",r)}.call(this,n(19))},function(e,t){
 /**
 @license
 Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
