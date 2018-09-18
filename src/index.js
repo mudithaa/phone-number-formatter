@@ -148,9 +148,16 @@ export class PhoneNumberFormatter extends PolymerElement {
   }
 
   numberChanged(){
-    this.clearResponse();
+    var result = {
+      isValid:false,
+      e164format:'',
+      regionPrefix:'',
+      nationalFormat: ''
+    };   
 
-    if (this.isValidNumber(this.number))
+    if (this.number!=undefined 
+      && this.number!="" 
+      && this.number.length>4)
     {
       var instance = libphonenumber.PhoneNumberUtil.getInstance();      
       var phoneNumber = instance.parse(this.number, this.countryCode);
@@ -166,14 +173,30 @@ export class PhoneNumberFormatter extends PolymerElement {
       && instance.isPossibleNumber(phoneNumber) 
       && instance.isValidNumberForRegion(phoneNumber, this.countryCode))
       {        
-        this.setResponse(instance, phoneNumber);
+        var regionPrefix = instance.getCountryCodeForRegion(this.countryCode);
+        var e164format = instance.formatOutOfCountryCallingNumber(phoneNumber);
+        var nationalNumber = instance.formatNationalNumberWithCarrierCode(phoneNumber);
+        var result = {
+          e164format: e164format, 
+          regionPrefix : regionPrefix, 
+          nationalFormat: nationalNumber, 
+          isValid: true
+        };
       }
     }
+    this._setResponse(result);
   }
 
   countryCodeChanged() { 
-    this.clearResponse();
-    if (this.isValidNumber(this.number))
+    var result = {
+      isValid:false,
+      e164format:'',
+      regionPrefix:'',
+      nationalFormat: ''
+    };   
+    if (this.number!=undefined 
+      && this.number!="" 
+      && this.number.length>4)
     {
       var instance = libphonenumber.PhoneNumberUtil.getInstance();      
       var phoneNumber = instance.parse(this.number, this.countryCode);
@@ -182,17 +205,26 @@ export class PhoneNumberFormatter extends PolymerElement {
       && instance.isPossibleNumber(phoneNumber) 
       && instance.isValidNumberForRegion(phoneNumber, this.countryCode))
       {        
-        this.setResponse(instance, phoneNumber);        
+        var regionPrefix = instance.getCountryCodeForRegion(this.countryCode);
+        var e164format = instance.formatOutOfCountryCallingNumber(phoneNumber);
+        var nationalNumber = instance.formatNationalNumberWithCarrierCode(phoneNumber);
+        var result = {
+          e164format: e164format, 
+          regionPrefix : regionPrefix, 
+          nationalFormat: nationalNumber, 
+          isValid: true
+        };        
       }
     }
+    this._setResponse(result);
   }
 
   isValidNumber(number){
-    var pattern = /^\+?(9[976][0-9]|8[987530][0-9]|6[987][0-9]|5[90][0-9]|42[0-9]|3[875][0-9]|2[98654321][0-9]|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1|0)[0-9]{1,14}$/
+    
     if (number!=undefined 
       && number!="" 
       && number.length>4
-      && number.replace(/ /g, "").match(pattern)){
+      ){
       return true;
     }
     return false;
