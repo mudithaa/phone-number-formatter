@@ -253,7 +253,7 @@ class l extends o.a{static get is(){return"dom-if"}static get template(){return 
         <vaadin-list-box>
         <dom-repeat items="{{flags}}">
           <template>
-            <vaadin-item value={{item}}><img src="../src/images/{{item}}.png"</vaadin-item>
+            <vaadin-item value={{item}}><img src="/dist/images/{{item}}.png"</vaadin-item>
           </template>
         </dom-repeat>
         </vaadin-list-box>

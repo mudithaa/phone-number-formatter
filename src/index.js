@@ -56,7 +56,7 @@ export class PhoneNumberFormatter extends PolymerElement {
         <vaadin-list-box>
         <dom-repeat items="{{flags}}">
           <template>
-            <vaadin-item value={{item}}><img src="../src/images/{{item}}.png"</vaadin-item>
+            <vaadin-item value={{item}}><img src="/dist/images/{{item}}.png"</vaadin-item>
           </template>
         </dom-repeat>
         </vaadin-list-box>

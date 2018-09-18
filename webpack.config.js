@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -24,6 +25,15 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       libphonenumber: 'google-libphonenumber'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/*.png',
+        to: 'dest/',
+        transform (content, path) {
+          return optimize(content)
+        }
+      } 
+    ])
     ]
 };
