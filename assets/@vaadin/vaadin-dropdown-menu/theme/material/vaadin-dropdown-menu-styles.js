@@ -62,6 +62,7 @@ $_documentContainer.innerHTML = `<dom-module id="material-dropdown-menu" theme-f
 
       [part="overlay"] {
         min-width: var(--vaadin-dropdown-menu-text-field-width);
+        z-index: var(--vaadin-dropdown-menu-text-field-z-index);
       }
     </style>
   </template>

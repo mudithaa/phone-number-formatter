@@ -16,6 +16,7 @@ $_documentContainer.innerHTML = `<dom-module id="lumo-dropdown-menu" theme-for="
       :host {
         outline: none;
         -webkit-tap-highlight-color: transparent;
+        z-index:13000;
       }
 
       [selected] {
@@ -67,6 +68,7 @@ $_documentContainer.innerHTML = `<dom-module id="lumo-dropdown-menu" theme-for="
 
       [part~="overlay"] {
         min-width: var(--vaadin-dropdown-menu-text-field-width);
+        z-index: 12000;
       }
 
       /* Small viewport adjustment */

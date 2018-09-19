@@ -22,7 +22,8 @@ export class PhoneNumberFormatter extends PolymerElement {
     return html`
       <style>
         :host {
-          display: block;                    
+          display: block;  
+          --vaadin-dropdown-menu-text-field-z-index: 12000px;                  
         }
         input {
           @apply --phone-number-formatter-input-theme         
@@ -49,17 +50,19 @@ export class PhoneNumberFormatter extends PolymerElement {
         }
       </style>     
       <label>{{label}}</label>
-      <vaadin-dropdown-menu value="{{countryCode}}">
+    
+    <vaadin-dropdown-menu value="{{countryCode}}">
       <template>
         <vaadin-list-box>
         <dom-repeat items="{{flags}}">
           <template>
-            <vaadin-item value={{item}}><img src="/dist/images/{{item}}.png"</vaadin-item>
+            <vaadin-item value={{item}}><img src="/src/images/{{item}}.png"></vaadin-item>
           </template>
         </dom-repeat>
         </vaadin-list-box>
       </template>
     </vaadin-dropdown-menu>
+    
     <input value="{{number::input}}" placeholder="[[placeHolder]]">
     
     <template is="dom-if" if="[[debugInfo]]">
@@ -152,16 +155,9 @@ export class PhoneNumberFormatter extends PolymerElement {
   }
 
   numberChanged(){
-    var result = {
-      isValid:false,
-      e164format:'',
-      regionPrefix:'',
-      nationalFormat: ''
-    };   
+    this.clearResponse();
 
-    if (this.number!=undefined 
-      && this.number!="" 
-      && this.number.length>4)
+    if (this.isValidNumber(this.number))
     {
       var instance = libphonenumber.PhoneNumberUtil.getInstance();      
       var phoneNumber = instance.parse(this.number, this.countryCode);
@@ -177,30 +173,14 @@ export class PhoneNumberFormatter extends PolymerElement {
       && instance.isPossibleNumber(phoneNumber) 
       && instance.isValidNumberForRegion(phoneNumber, this.countryCode))
       {        
-        var regionPrefix = instance.getCountryCodeForRegion(this.countryCode);
-        var e164format = instance.formatOutOfCountryCallingNumber(phoneNumber);
-        var nationalNumber = instance.formatNationalNumberWithCarrierCode(phoneNumber);
-        var result = {
-          e164format: e164format, 
-          regionPrefix : regionPrefix, 
-          nationalFormat: nationalNumber, 
-          isValid: true
-        };
+        this.setResponse(instance, phoneNumber);
       }
     }
-    this._setResponse(result);
   }
 
   countryCodeChanged() { 
-    var result = {
-      isValid:false,
-      e164format:'',
-      regionPrefix:'',
-      nationalFormat: ''
-    };   
-    if (this.number!=undefined 
-      && this.number!="" 
-      && this.number.length>4)
+    this.clearResponse();
+    if (this.isValidNumber(this.number))
     {
       var instance = libphonenumber.PhoneNumberUtil.getInstance();      
       var phoneNumber = instance.parse(this.number, this.countryCode);
@@ -209,27 +189,16 @@ export class PhoneNumberFormatter extends PolymerElement {
       && instance.isPossibleNumber(phoneNumber) 
       && instance.isValidNumberForRegion(phoneNumber, this.countryCode))
       {        
-        var regionPrefix = instance.getCountryCodeForRegion(this.countryCode);
-        var e164format = instance.formatOutOfCountryCallingNumber(phoneNumber);
-        var nationalNumber = instance.formatNationalNumberWithCarrierCode(phoneNumber);
-        var result = {
-          e164format: e164format, 
-          regionPrefix : regionPrefix, 
-          nationalFormat: nationalNumber, 
-          isValid: true
-        };        
+        this.setResponse(instance, phoneNumber);
       }
     }
-    this._setResponse(result);
   }
 
-  isValidNumber(number){
-    
+  isValidNumber(number){    
     if (number!=undefined 
       && number!="" 
-      && number.length>4
-      ){
-      return true;
+      && number.length>4){
+        return true;
       }
     return false;
   }

@@ -12,6 +12,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/',
   },
+  optimization: {
+    portableRecords: true
+  },
   module: {
     rules: [
       {
@@ -28,12 +31,9 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: 'src/*.png',
-        to: 'dest/',
-        transform (content, path) {
-          return optimize(content)
-        }
+        from: 'src/images/*.png',
+        to: 'images', force: true
       } 
     ])
-    ]
+  ]
 };
