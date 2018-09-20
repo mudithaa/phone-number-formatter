@@ -15,6 +15,7 @@ $_documentContainer.innerHTML = `<dom-module id="vaadin-dropdown-menu-overlay-st
       :host {
         align-items: flex-start;
         justify-content: flex-start;
+        z-index:15000;
       }
     </style>
   </template>

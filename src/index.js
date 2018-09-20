@@ -1,4 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
 import 'google-libphonenumber/dist/libphonenumber.js';
 import '@polymer/polymer/lib/elements/dom-repeat.js';
 import '@polymer/polymer/lib/elements/dom-if.js';
@@ -34,7 +35,10 @@ export class PhoneNumberFormatter extends PolymerElement {
         }
         vaadin-dropdown-menu{
           width: 80px;
-          z-index: 10000;          
+          z-index: 12000;          
+        }
+        vaadin-list-box{
+          z-index: 12000;
         }
         div.vaadin-text-field-container{
           max-height:36px;          

@@ -1,6 +1,9 @@
 <!doctype html>
+<meta charset="utf-8"/>
+
 <html >
   <head>
+    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>    
     <script src="bower_components/angular-bind-polymer/angular_bind_polymer.js"></script>
     <script>
@@ -21,7 +24,7 @@
       <h1>You entered {{number}}!</h1>
       <script src="dist/main.js"></script>
       <phone-number-formatter 
-        debug-info="false" 
+        debug-info 
         number="{{number}}" 
         label="Type your number" 
         country-code="{{countryCode}}" 
