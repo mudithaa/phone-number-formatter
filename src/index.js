@@ -160,8 +160,13 @@ export class PhoneNumberFormatter extends PolymerElement {
   }
 
   numberChanged(){
-    this.clearResponse();
-
+    var result = {
+      isValid:false,
+      e164format:'',
+      regionPrefix:'',
+      nationalFormat: ''
+    };   
+    
     if (this.isValidNumber(this.number))
     {
       var instance = libphonenumber.PhoneNumberUtil.getInstance();      
@@ -178,13 +183,28 @@ export class PhoneNumberFormatter extends PolymerElement {
       && instance.isPossibleNumber(phoneNumber) 
       && instance.isValidNumberForRegion(phoneNumber, this.countryCode))
       {        
-        this.setResponse(instance, phoneNumber);
+        var regionPrefix = instance.getCountryCodeForRegion(this.countryCode);
+        var e164format = instance.formatOutOfCountryCallingNumber(phoneNumber);
+        var nationalNumber = instance.formatNationalNumberWithCarrierCode(phoneNumber);
+        result = {
+          e164format: e164format, 
+          regionPrefix : regionPrefix, 
+          nationalFormat: nationalNumber, 
+          isValid: true
+        };
+       
       }
     }
+    this._setResponse(result);
   }
 
   countryCodeChanged() { 
-    this.clearResponse();
+    var result = {
+      isValid:false,
+      e164format:'',
+      regionPrefix:'',
+      nationalFormat: ''
+    };   
     if (this.isValidNumber(this.number))
     {
       var instance = libphonenumber.PhoneNumberUtil.getInstance();      
@@ -194,9 +214,18 @@ export class PhoneNumberFormatter extends PolymerElement {
       && instance.isPossibleNumber(phoneNumber) 
       && instance.isValidNumberForRegion(phoneNumber, this.countryCode))
       {        
-        this.setResponse(instance, phoneNumber);
+        var regionPrefix = instance.getCountryCodeForRegion(this.countryCode);
+        var e164format = instance.formatOutOfCountryCallingNumber(phoneNumber);
+        var nationalNumber = instance.formatNationalNumberWithCarrierCode(phoneNumber);
+        result = {
+          e164format: e164format, 
+          regionPrefix : regionPrefix, 
+          nationalFormat: nationalNumber, 
+          isValid: true
+        };        
       }
     }
+    this._setResponse(result);
   }
 
   isValidNumber(number){    
